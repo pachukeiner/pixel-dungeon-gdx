@@ -157,4 +157,6 @@ public class Assets {
 	public static final String SND_GHOST	= "snd_ghost.mp3";
 	public static final String SND_SECRET	= "snd_secret.mp3";
 	public static final String SND_BONES	= "snd_bones.mp3";
+	
+	public static final String I18N_FILE = "i18n/Strings";
 }

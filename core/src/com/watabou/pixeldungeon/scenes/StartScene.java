@@ -35,13 +35,14 @@ import com.watabou.pixeldungeon.GamesInProgress;
 import com.watabou.pixeldungeon.PixelDungeon;
 import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.effects.BannerSprites;
-import com.watabou.pixeldungeon.effects.Speck;
 import com.watabou.pixeldungeon.effects.BannerSprites.Type;
+import com.watabou.pixeldungeon.effects.Speck;
 import com.watabou.pixeldungeon.input.GameAction;
 import com.watabou.pixeldungeon.ui.Archs;
 import com.watabou.pixeldungeon.ui.ExitButton;
 import com.watabou.pixeldungeon.ui.Icons;
 import com.watabou.pixeldungeon.ui.RedButton;
+import com.watabou.pixeldungeon.utils.I18n;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.pixeldungeon.windows.WndChallenges;
 import com.watabou.pixeldungeon.windows.WndClass;
@@ -52,9 +53,6 @@ public class StartScene extends PixelScene {
 
 	private static final float BUTTON_HEIGHT	= 24;
 	private static final float GAP				= 2;
-	
-	private static final String TXT_LOAD	= "Load Game";
-	private static final String TXT_NEW		= "New Game";
 	
 	private static final String TXT_ERASE		= "Erase current game";
 	private static final String TXT_DPTH_LVL	= "Depth: %d, level: %d";
@@ -107,7 +105,7 @@ public class StartScene extends PixelScene {
 		title.y = top;
 		add( title );
 		
-		btnNewGame = new GameButton( TXT_NEW ) {
+		btnNewGame = new GameButton(I18n.get("newGame")) {
 			@Override
 			protected void onClick() {
 				if (GamesInProgress.check( curClass ) != null) {
@@ -127,7 +125,7 @@ public class StartScene extends PixelScene {
 		};
 		add( btnNewGame );
 
-		btnLoad = new GameButton( TXT_LOAD ) {	
+		btnLoad = new GameButton(I18n.get("loadGame")) {	
 			@Override
 			protected void onClick() {
 				InterlevelScene.mode = InterlevelScene.Mode.CONTINUE;

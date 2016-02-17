@@ -20,6 +20,8 @@ package com.watabou.pixeldungeon;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Graphics;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.utils.I18NBundle;
 import com.watabou.input.NoosaInputProcessor;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Music;
@@ -28,10 +30,13 @@ import com.watabou.pixeldungeon.input.GameAction;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.scenes.PixelScene;
 import com.watabou.pixeldungeon.scenes.TitleScene;
+import com.watabou.pixeldungeon.utils.I18n;
 import com.watabou.utils.PDPlatformSupport;
 import com.watabou.utils.Signal;
 
 public class PixelDungeon extends Game<GameAction> {
+	
+	
 
 	public PixelDungeon(final PDPlatformSupport<GameAction> platformSupport) {
 		super( TitleScene.class, platformSupport );
@@ -108,6 +113,8 @@ public class PixelDungeon extends Game<GameAction> {
 		
 		Music.INSTANCE.enable( music() );
 		Sample.INSTANCE.enable( soundFx() );
+
+		I18n.load();
 	}
 
 	@Override
